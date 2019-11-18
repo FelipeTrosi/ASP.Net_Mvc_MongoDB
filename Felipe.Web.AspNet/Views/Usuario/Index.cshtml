@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MVC.Web.AspNet.Models.Estudante>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Cadastrar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Curso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataMatricula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorMensalidade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Curso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.Rm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataMatricula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorMensalidade)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Editar", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Excluir", new { id = item.Id }) 
+        </td>            
+    </tr>
+}
+
+</table>
